@@ -64,14 +64,13 @@ drwxr-xr-x  5 rsattely  staff   170 May  8 15:32 java-helloworld
     Exercise 4 represent?
 ----
 
-<type or copy-paste your answer here>
-
+the "." represents current folder ".." represents one place back
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+the only indicated is the "-rwxr-xr-x@ 1 rsattely  staff  8463 May  8 15:45 introduction-to-tools-exercises.txt"
 
 
 ----
@@ -79,7 +78,10 @@ drwxr-xr-x  5 rsattely  staff   170 May  8 15:32 java-helloworld
     the directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+<tdrwxr-xr-x  4 rsattely  staff   136 May  8 15:32 . (rsattely)
+drwxr-xr-x  4 rsattely  staff   136 May  8 15:32 .. (robertsattely-java-exercises)
+drwxr-xr-x  5 rsattely  staff   170 May  8 15:32 java-helloworld
+
 
 
 ----
@@ -103,13 +105,7 @@ drwxr-xr-x  5 rsattely  staff   170 May  8 15:32 java-helloworld
     Press Q to quit when you wish to stop viewing either of the files.
 ----
 
-$ less pom.xml
 
-Or
-
-$ less database/pagila.sql
-
-You are encouraged to make "less" part of your standard command line toolkit.
 
 
 ----
