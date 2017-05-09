@@ -207,29 +207,79 @@ Helloworld.java		Helloworld.java.copy
     checkin to the local repository, but also push it up to BitBucket. 
 ----
 
-$ <enter the Git command to display status>
-<type or copy-paste the result here>
+Techs-MacBook-Air-10:techelevator rsattely$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-$ <enter the Git command to "stage" all changes>
-<type or copy-paste the result here>
+	modified:   ../../../../../../introduction-to-tools-exercises.txt
 
-$ <enter the Git command to save all "staged" changes>
-<type or copy-paste the result here>
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
 
-$ git push
-<type or copy-paste the result here>
+	Helloworld.java.copy
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+diff --git a/m1-w1d1-intro-to-tools/introduction-to-tools-exercises.txt b/m1-w1d1-intro-to-tools/introduction-to-tools-exercises.txt
+index e604c9c..603402d 100755
+--- a/m1-w1d1-intro-to-tools/introduction-to-tools-exercises.txt
++++ b/m1-w1d1-intro-to-tools/introduction-to-tools-exercises.txt
+@@ -189,13 +189,8 @@ drwxr-xr-x  4 rsattely  staff   136 May  8 15:32 src
+     command.
+ ----
+ 
+-$ cp Helloworld.java Helloworld.java.backup
+-
+-The "cp" parameters are the name of the source file followed by the name of the 
+-destination file. 
+-
+-$ <enter command to list all files and folders in order to confirm the creation of the backup file>
+-<type or copy-paste the result here>
++Techs-MacBook-Air-10:techelevator rsattely$ ls
++Helloworld.java                Helloworld.java.backup
+ 
+ 
+ ----    
+:
+
+
+Techs-MacBook-Air-10:techelevator rsattely$ git commit -m "Answered numbers 13,14,15"
+[master 140562a] Answered numbers 13,14,15
+ Committer: rjsattely@gmail.com <rsattely@Techs-MacBook-Air-10.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 13 insertions(+), 14 deletions(-)
+ create mode 100755 m1-w1d1-intro-to-tools/java-helloworld/src/main/java/com/techelevator/Helloworld.java.copy
+
+Techs-MacBook-Air-10:techelevator rsattely$ git push origin master
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (10/10), 848 bytes | 0 bytes/s, done.
+Total 10 (delta 2), reused 0 (delta 0)
+To https://bitbucket.org/te-cbus-cohort-2/robertsattely-java-exercises.git
+   07181e6..140562a  master -> master
 
 
 ----
 16. Delete the backup file, "Helloworld.java.copy" using the remove command.
 ----
 
-$ rm Helloworld.java.copy
+Techs-MacBook-Air-10:techelevator rsattely$ ls
+Helloworld.java
 
-The "rm" parameter is the name of the file to be deleted.
-
-$ <enter command to list all files and folders in order to confirm the file deletion>
-<type or copy-paste the result here>
 
 
 ----
@@ -250,8 +300,8 @@ command line when that seems natural.
 
 Regardless of the option you chose, check your new location.
 
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+Techs-MacBook-Air-10:java-helloworld rsattely$ ls
+database	pom.xml		src
 
 
 ----
@@ -259,10 +309,11 @@ $ <enter command to display present working directory>
     change into it.
 ----
 
-$ mkdir docs
-$ <enter the command to change directory to "docs" using a relative path>
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+Techs-MacBook-Air-10:java-helloworld rsattely$ mkdir docs
+Techs-MacBook-Air-10:java-helloworld rsattely$ ls
+database	docs		pom.xml		src
+Techs-MacBook-Air-10:java-helloworld rsattely$ cd docs
+Techs-MacBook-Air-10:docs rsattely$ 
 
 ----
 19. Create a new file name "readme.txt" using Visual Studio Code, and add the text
