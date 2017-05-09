@@ -189,13 +189,8 @@ drwxr-xr-x  4 rsattely  staff   136 May  8 15:32 src
     command.
 ----
 
-$ cp Helloworld.java Helloworld.java.backup
-
-The "cp" parameters are the name of the source file followed by the name of the 
-destination file. 
-
-$ <enter command to list all files and folders in order to confirm the creation of the backup file>
-<type or copy-paste the result here>
+Techs-MacBook-Air-10:techelevator rsattely$ ls
+Helloworld.java		Helloworld.java.backup
 
 
 ----    
@@ -203,13 +198,8 @@ $ <enter command to list all files and folders in order to confirm the creation 
     command. (There is no rename command in UNIX.)
 ----
 
-$ mv Helloworld.java.backup Helloworld.java.copy
-
-The "mv" parameters are the existing name of the file followed by the new name 
-of the file. 
-
-$ <enter command to list all files and folders in order to confirm the renaming of the file>
-<type or copy-paste the result here>
+Techs-MacBook-Air-10:techelevator rsattely$ ls
+Helloworld.java		Helloworld.java.copy
 
 
 ----
