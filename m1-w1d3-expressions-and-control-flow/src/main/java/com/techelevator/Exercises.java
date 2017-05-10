@@ -10,8 +10,18 @@ public class Exercises {
 	 sleepIn(false, true) → true
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
-		return false;
-	}
+//		if(vacation) {
+//			return true;
+//		}else if(weekday){
+//			return false;
+//		}else {
+//			return true;
+		// or
+		return vacation || !weekday;
+		
+		}
+		
+		
 
 	/*
 	 2. We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling. 
@@ -22,17 +32,27 @@ public class Exercises {
 	 monkeyTrouble(true, false) → false
 	 */
 	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-		return false;
+//		if((aSmile && bSmile) || (!aSmile && !bSmile)) {
+//			return true;
+//	   }   else {
+//		return false;
+//	   }
+//		or
+		return aSmile == bSmile;
 	}
-	
 	/*
 	 3. Given two int values, return their sum. Unless the two values are the same, then return double their sum.
 	 sumDouble(1, 2) → 3
 	 sumDouble(3, 2) → 5
-	 sumDouble(2, 2) → 8
-	 */
+	 sumDouble(2, 2) 
+    */
 	public int sumDouble(int a, int b) {
-		return 0;
+		if( a == b ){
+			return ( a + b ) * 2;
+		}
+	  else{
+			return a + b ;
+		}
 	}
 
 	/*
@@ -45,7 +65,11 @@ public class Exercises {
 	 diff21(-10) → 31
 	 */
 	public int diff21(int n) {
-		return 0;
+		if ( n < 21 ) {
+			return (21 - n);
+		} else {
+			return (n-21)*2;
+		}
 	}
 
 	/*
@@ -57,8 +81,19 @@ public class Exercises {
 	 parrotTrouble(false, 6) → false
 	 */
 	public boolean parrotTrouble(boolean talking, int hour) {
-		return false;
+		if (talking) {
+			if (hour > 20 || hour < 7) {
+				return true;
+			}else {
+				return false;
+			}
+		}else {
+				return false;
+			}
+		
 	}
+		
+
 
 	/*
 	 6. Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
@@ -67,7 +102,13 @@ public class Exercises {
 	 makes10(1, 9) → true
 	 */
 	public boolean makes10(int a, int b) {
-		return false;
+		if ((a == 10) || (b == 10)){
+			return true;
+		} else if ((a + b) == 10) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -78,7 +119,14 @@ public class Exercises {
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
-		return false;
+		if (negative && (a<0 && b < 0)) {
+			return true;		
+		}else if (((a>0 && b<0) || (a<0 && b>0)) && !negative){
+			return true;
+		}else {
+			return false;
+		}
+			
 	}
 
 	/*
@@ -89,7 +137,11 @@ public class Exercises {
 	 or35(8) → false
 	 */
 	public boolean or35(int n) {
-		return false;
+		if ((n%3 == 0) || (n%5 == 0)){
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	/*
@@ -99,7 +151,11 @@ public class Exercises {
 	 icyHot(2, 120) → false
 	 */
 	public boolean icyHot(int temp1, int temp2) {
-		return false;
+		if ((temp1 < 0 || temp1 > 100) && (temp2 < 0 || temp2 > 100)) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	/*
@@ -109,7 +165,11 @@ public class Exercises {
 	 in1020(8, 99) → false
 	 */
 	public boolean in1020(int a, int b) {
-		return false;
+		if ((a <20 && a >10) || (b <20 && b >10) ) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	/*
@@ -120,8 +180,15 @@ public class Exercises {
 	 hasTeen(20, 10, 13) → true
 	 */
 	public boolean hasTeen(int a, int b, int c) {
-		return false;
-	}
+		if (a >= 13 || b >=13 || c>=13) {
+			if (a <= 19 || b <= 19 || c <= 19){
+			return true;
+			}
+			}else {
+	       return false;
+          }
+		}
+	
 
 	/*
 	 12. We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values,

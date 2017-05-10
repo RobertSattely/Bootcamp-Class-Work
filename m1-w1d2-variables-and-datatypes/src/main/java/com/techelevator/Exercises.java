@@ -527,7 +527,7 @@ public class Exercises {
 
         /*
         50. Cristina baked 17 croissants. If she planned to serve this equally to
-        her seven guests, how many will each have?
+        her seven guests how many will each have?
         */
             
 	    int cristingsCroissants = 17;
