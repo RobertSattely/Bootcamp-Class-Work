@@ -533,13 +533,8 @@ public class Exercises {
 	    int cristingsCroissants = 17;
 	    int cristingsGuest = 7;
 	    int eachGuestGets = cristingsCroissants / cristingsGuest;
-	    System.out.println("50. Each guest will get " + eachGuestGets + " croissant.");
-	    
-	    int x = 4;
-	    int y = x + 3;
-	    y = 3;
-	    System.out.println(y);
-	    
+	    System.out.println("50. Each guest will get " + eachGuestGets + " croissant.");    
+	 
 	}
 
 }

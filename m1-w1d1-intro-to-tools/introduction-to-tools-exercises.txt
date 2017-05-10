@@ -64,7 +64,7 @@ drwxr-xr-x  5 rsattely  staff   170 May  8 15:32 java-helloworld
     Exercise 4 represent?
 ----
 
-the "." represents current folder ".." represents one place back
+the "." represents current folder ".." represents one parent directory
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
@@ -157,9 +157,9 @@ BitBucket when a feature, fix, or in this case, assignment is finished.
     Show your present working directory after the change.
 ----
 
-$ cd src/main/java/com/techelevator
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+Techs-MacBook-Air-10:java-helloworld rsattely$ cd src/main/java/com/techelevator
+Techs-MacBook-Air-10:techelevator rsattely$ pwd
+/Users/rsattely/robertsattely-java-exercises/m1-w1d1-intro-to-tools/java-helloworld/src/main/java/com/techelevator
 
 
 ----
@@ -167,7 +167,7 @@ $ <enter command to display present working directory>
     path?
 ----
 
-<type your answer here>
+absolute
 
 
 ----
@@ -320,9 +320,11 @@ Techs-MacBook-Air-10:docs rsattely$
     "Hello, this is the beginning of the application's documentation."
 ----
 
-$ code readme.txt
-
-Don't forget to save the file in Text Mate!
+Techs-MacBook-Air-10:workspaces rsattely$ mate readme.txt
+Techs-MacBook-Air-10:workspaces rsattely$ ls
+HelloWorld.class		java-lecture
+HelloWorld.java			readme.txt
+RemoteSystemsTempFiles		robertsattely-java-exercises
 
 
 ----
