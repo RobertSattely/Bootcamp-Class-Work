@@ -73,8 +73,8 @@ public class Exercises {
 	 rotateLeft3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] rotateLeft3(int[] nums) {
-		if (nums[] > nums[4])
-		return (nums[2],nums[1], num[0]);
+		return new int[]  {nums[1],nums[2],nums[0]};
+		
 	}
 
 	/*
@@ -85,8 +85,8 @@ public class Exercises {
 	 reverse3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] reverse3(int[] nums) {
-		return new int[] {};
-	}
+		return new int[]  {nums[2],nums[1],nums[0]};
+}
 
 	/*
 	 Given an array of ints length 3, figure out which is larger between the first and last elements 
@@ -96,7 +96,11 @@ public class Exercises {
 	 maxEnd3([2, 11, 3]) → [3, 3, 3]
 	 */
 	public int[] maxEnd3(int[] nums) {
-		return new int[] {};
+		if (nums[0] > nums[2]){
+			return new int[] {nums[0],nums[0],nums[0]};
+		}else {
+			return new int[] {nums[2],nums[2],nums[2]};
+		}
 	}
 
 	/*
@@ -107,7 +111,11 @@ public class Exercises {
 	 sum2([1, 1, 1, 1]) → 2
 	 */
 	public int sum2(int[] nums) {
-		return 0;
+		if(nums.length == 0){
+			return 0;
+		}else {
+		    return nums[0]+nums[1];
+	   }
 	}
 
 	/*
@@ -118,7 +126,7 @@ public class Exercises {
 	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
 	 */
 	public int[] middleWay(int[] a, int[] b) {
-		return new int[] {};
+		return new int[] {a[1],b[1]};
 	}
 
 	/*
@@ -129,8 +137,11 @@ public class Exercises {
 	 countEvens([1, 3, 5]) → 0
 	 */
 	public int countEvens(int[] nums) {
-		return 0;
-	}
+		 int count = 0;
+		    for (int i = 0; i < nums.length; i++)
+		        if (nums[i] % 2 == 0) count++;
+		    return count;
+		}
 
 	/*
 	 Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 
@@ -141,7 +152,9 @@ public class Exercises {
 	 sum13([1, 2, 2, 1, 13]) → 6
 	 */
 	public int sum13(int[] nums) {
-		return 0;
+		int total
+		for (int i = 0;i<nums.length;i++)
+			if (i=)
 	}
 
 	/*
@@ -171,7 +184,7 @@ public class Exercises {
 	 sum28([1, 2, 3, 4]) → false
 	 */
 	public boolean sum28(int[] nums) {
-		return false;
+		if (nums[0] == 2)
 	}
 
 }
