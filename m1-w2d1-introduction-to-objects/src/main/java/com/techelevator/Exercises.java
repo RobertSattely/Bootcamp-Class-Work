@@ -1,5 +1,8 @@
 package com.techelevator;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Exercises {
 
 	/*
@@ -158,6 +161,7 @@ public class Exercises {
 	public String left2(String str) {
 
 		int moveOnOver = str.length();
+		
 		if (moveOnOver <= 2) {
 			return str.substring(0);
 		} else {
@@ -364,17 +368,15 @@ public class Exercises {
 	 * → 2 countXX("xxxx") →
 	 */
 	public int countXX(String str) {
-		String a = "";
-		int b = str.length();
-		int c = 0;
-		for (int i = 0; i < b; i++) {
-			if (str.charAt(i) == 'x') {
-				 c = i + 1;
-				if (str.charAt(c) == 'x') {
-					return c;
-				}
+	int a = str.length() -1;
+		
+		int countX = 0;
+		
+		for (int i = 0; i < a ; i++) {
+			if (str.substring(i, i+2).equals("xx")){
+	              countX++;
 			}
-		}return c;
+		}return countX;
 	}
 
 	/*
@@ -384,8 +386,7 @@ public class Exercises {
 	 */
 	public boolean doubleX(String str) {
 		int a = str.length();
-		boolean b = str.contains("xx");
-
+		
 		for (int i = 0; i < a - 1; i++) {
 			if (str.charAt(i) == 'x') {
 				int c = i + 1;
@@ -435,7 +436,21 @@ public class Exercises {
 	 * last2("hixxhi") → 1 last2("xaxxaxaxx") → 1 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		return 0;
+		
+		if (str.length() <= 2){
+			return 0;
+		}else {
+			String lastTwoChars = str.substring(str.length()-2);
+		
+			int count = 0;
+		
+			for (int i = 0; i<str.length()-2;i++){
+				if (str.substring(i, i+2).equals(lastTwoChars)){
+					count++;	
+				}
+			}return count;
+		}
+	
 	}
 
 	/*
@@ -445,11 +460,18 @@ public class Exercises {
 	 * stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		if (str !="X"){
-				return str;
-		}else if (str.startsWith("x")){
-			
+		
+		if (str.length()<3){
+			return str;
+		
+		}else if (str.substring(1,str.length()-1).contains("x")){
+			 String middleOnly = str.substring(1,str.length()-1);
+					middleOnly = middleOnly.replace("x","");
+					return str.substring(0,1) + middleOnly + str.substring(str.length()-1);
+		}else{
+			return str;
 		}
+		
 	}
 
 	/*
@@ -458,15 +480,16 @@ public class Exercises {
 	 * altPairs("Chocolate") → "Chole" altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		String[] numbers = new String[str.length()];
-		int a = str.length();
+		String skipper = "";
 		 
-		 
-		for (int i = 0; i < 10 ; i+=4) {
-			 numbers [i]+= i;
+		for (int i = 0; i < str.length() ; i+=4) {
 			 
+			 skipper = skipper + str.substring(i, i+1);
+			 	if (i+1<= str.length()-1){
+			 		skipper = skipper + str.substring(i+1,i+2);
+			 	}
 			
-		} return numbers.toString();
+		} return skipper;
 			
 	}
 

@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Exercises {
@@ -34,7 +35,31 @@ public class Exercises {
 	 * 
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
+		Map <String, String> animalGroupName = new HashMap <String, String>();{
+			animalGroupName.put("rhino" , "Crash");
+			animalGroupName.put("giraffe" , "Tower");
+			animalGroupName.put("elephant" , "Herd");
+			animalGroupName.put("lion" , "Pride");
+			animalGroupName.put("crow" , "Murder");
+			animalGroupName.put("pigeon" , "Kit");
+			animalGroupName.put("flamingo" , "Pat");
+			animalGroupName.put("deer" , "Herd");
+			animalGroupName.put("dog" , "Pack");
+			animalGroupName.put("crocodile" , "Float");
+			
+			if (animalName == null || animalName.isEmpty()){
+				return "unknown";
+			}
+			
+			String animalLower = animalName.toLowerCase();
+			 
+			if( animalGroupName.containsKey(animalLower)){
+				return animalGroupName.get(animalLower);
+			}else {
+				return "unknown";
+			}
+			
+		}
 	}
 
 	/*
@@ -175,6 +200,27 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> last2Revisted(String[] words) {
-		return null;
+		Map<String, Integer> results = new HashMap<String, Integer>();
+		for(String word:words){
+			results.put(word, lastTwoCount(word));
+		}
+		return results;
+	}
+	      //return type// name//argument
+	public int lastTwoCount(String word){
+		if (word.length() <= 2){
+			return 0;
+		}else {
+			String lastTwoChars = word.substring(word.length()-2);
+		
+			int count = 0;
+		
+			for (int i = 0; i<word.length()-2;i++){
+				if (word.substring(i, i+2).equals(lastTwoChars)){
+					count++;	
+				}
+			}
+		return count;
+		}
 	}
 }
