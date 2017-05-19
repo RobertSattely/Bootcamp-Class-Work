@@ -85,8 +85,28 @@ public class Exercises {
 	 * 
 	 */
 	public Double isItOnSale(String itemNumber) {
-		return null;
+		Map <String, Double> bigSale = new HashMap <String, Double>();{
+			bigSale.put("kitchen4001", 0.20);
+			bigSale.put("garage1070", 0.15);
+			bigSale.put("livingroom", 0.10);
+			bigSale.put("kitchen6073",0.40);
+			bigSale.put("bedroom3434",0.60);
+			bigSale.put("bath0073", 0.15);
+		
+			if (itemNumber == null || itemNumber.isEmpty()){
+				return 0.00;
+			}
+			
+			String itemNumberLower = itemNumber.toLowerCase();
+			 
+			if( bigSale.containsKey(itemNumberLower)){
+				return bigSale.get(itemNumberLower);
+			}else {
+				return 0.00;
+			}
+		}
 	}
+			
 	
 	/*
 	 * Modify and return the given map as follows: if "Peter" has more than 0 money, transfer half of it to "Paul",
@@ -99,7 +119,18 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		int peterMoney = peterPaul.get("Peter");
+		int paulMoney = peterPaul.get("Paul");
+		
+		if(peterMoney > 0 && paulMoney < 1000) {
+			int peterHalf = peterMoney / 2;
+			peterMoney -= peterHalf;
+			paulMoney += peterHalf;
+			peterPaul.put("Peter", peterMoney);
+			peterPaul.put("Paul", paulMoney);
+		}
+		
+		return peterPaul;
 	}
 	
     /*
@@ -112,8 +143,21 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
-	}
+		
+		int peterMoney = peterPaul.get("Peter");
+		int paulMoney = peterPaul.get("Paul");
+		
+		if(peterMoney >= 5000 && paulMoney >= 10000) {
+			
+			peterPaul.put("Peter", peterMoney - (peterMoney/4));
+			peterPaul.put("Paul", paulMoney - (paulMoney/4));
+			peterPaul.put("PeterPaulPartnership", (peterMoney/4 )+ (paulMoney/4));
+			
+		}
+		
+		return peterPaul;
+	}	
+	
 	
 	/*
 	 * Given an array of non-empty strings, return a Map<String, String> where for every different string in the array, 
@@ -124,7 +168,16 @@ public class Exercises {
 	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
 	 */
 	public Map<String, String> beginningAndEnding(String[] words) {
-		return null;
+		Map<String,String> firstLast = new HashMap<String,String>();
+		
+		for(int i = 0; i<words.length; i++){
+			String firstLetter = words[i].substring(0,1);
+			String lastLetter = words[i].substring(words[i].length()-1);
+					
+			firstLast.put(firstLetter,lastLetter);
+			
+		}
+		return firstLast;
 	}
 	
 	/*
@@ -139,7 +192,18 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
+		Map <String, Integer> classic = new HashMap <String,Integer>();
+		
+		for(String word : words){
+			if(classic.containsKey(word)) {
+				int count = classic.get(word);
+				classic.put(word, count + 1);
+			} else {
+				classic.put(word, 1);
+			}
+			
+		}
+			return classic;
 	}
 	
 	/*
@@ -154,7 +218,19 @@ public class Exercises {
 	 * 
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
+		Map <Integer, Integer> classic = new HashMap <Integer,Integer>();
+		
+		for(Integer number : ints){
+			if(classic.containsKey(number)) {
+				int count = classic.get(number);
+				classic.put(number, count + 1);
+			} else {
+				classic.put(number, 1);
+			}
+			
+		}
+			return classic;
+	
 	}
 	
 	/*
@@ -167,7 +243,18 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Boolean> wordMultiple(String[] words) {
-		return null;
+		Map<String, Boolean> classic = new HashMap<String,Boolean>();
+		
+		for(String word : words){
+			if(classic.containsKey(word)) {
+				classic.put(word, true);
+			} else {
+				classic.put(word, false);
+			}
+			
+		}
+			return classic;
+	
 	}
 	
 	/*
@@ -181,7 +268,18 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
-		return null;
+		
+		for(String sku : mainWarehouse.keySet()){
+			
+			if(remoteWarehouse.containsKey(sku)) {
+				remoteWarehouse.put(sku, (remoteWarehouse.get(sku) + mainWarehouse.get(sku)));
+				
+			}else{
+				remoteWarehouse.put(sku, mainWarehouse.get(sku));
+			}
+		}
+			
+		return remoteWarehouse;
 	}
 
 	/*
