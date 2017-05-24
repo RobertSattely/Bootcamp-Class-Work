@@ -13,9 +13,10 @@ public class Airplane {
      * @param totalFirstClassSeats Total number of first class seats that can be booked
      * @param totalCoachSeats Total number of coach seats that can be booked
      */
-    public Airplane(int totalFirstClassSeats, int totalCoachSeats) {
+    public Airplane(int totalFirstClassSeats, int totalCoachSeats, String planeNumber) {
         this.totalFirstClassSeats = totalFirstClassSeats;
-        this.totalCoachSeats = totalCoachSeats;            
+        this.totalCoachSeats = totalCoachSeats;
+        this.planeNumber = planeNumber;
     }
 
     /**
@@ -39,7 +40,7 @@ public class Airplane {
      * @return availableFirstClassSeats
      */
     public int getAvailableFirstClassSeats() {
-        return bookedFirstClassSeats;
+        return totalFirstClassSeats - bookedFirstClassSeats;
     }
 
     /**
@@ -63,7 +64,7 @@ public class Airplane {
      * @return availableCoachSeats
      */
     public int getAvailableCoachSeats() {
-        return totalCoachSeats;
+        return totalCoachSeats - bookedCoachSeats;
     }
 
     /**
@@ -82,18 +83,18 @@ public class Airplane {
      */
     public boolean Reserve(boolean firstClass, int totalNumberOfSeats) {       
         if (firstClass) {
-            bookedFirstClassSeats += totalNumberOfSeats;
-            if (totalNumberOfSeats > getAvailableFirstClassSeats()) {
-                return false;
+            if (totalNumberOfSeats <= getAvailableFirstClassSeats()) {
+            	bookedFirstClassSeats += totalNumberOfSeats;
+                return true;
             }
         }
         else {
-            bookedCoachSeats += totalNumberOfSeats;
-            if (totalNumberOfSeats > getAvailableCoachSeats()) {
-                return false;
+            if (totalNumberOfSeats <= getAvailableCoachSeats()) {
+            	bookedCoachSeats += totalNumberOfSeats;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
 }

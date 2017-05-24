@@ -16,7 +16,8 @@ public class Employee {
      * @param salary
      */
     public Employee(int employeeId, String firstName, String lastName, double salary) {
-        this.firstName = firstName;
+        this.employeeId = employeeId;
+    	this.firstName = firstName;
         this.lastName = lastName;
         this.annualSalary = salary;
     }
@@ -33,7 +34,7 @@ public class Employee {
      * Employee first name
      * @return firstname
      */
-    public String FirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -41,7 +42,7 @@ public class Employee {
      * Employee last name
      * @return lastName
      */
-    public String LastName() {
+    public String getLastName() {
         return lastName;        
     }
 
@@ -49,7 +50,7 @@ public class Employee {
      * LastName, FirstName 
      * @return lastName, firstName
      */
-    public String FullName() {
+    public String getFullName() {
         return lastName + ", " + firstName;
     }
 

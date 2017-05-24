@@ -13,7 +13,7 @@ public class Elevator {
      * @param shaftNumber Shaft for the elevator
      * @param totalNumberOfFloors Number of floors in the elevator
      */
-    public Elevator(int shaftNumber, int totalNumberOfFloors) {
+    public Elevator(int shaftNumber, int totalNumberOfFloors,int currentLevel) {
         this.shaftNumber = shaftNumber;
         this.numberOfLevels = totalNumberOfFloors;
         this.currentLevel = 1;
@@ -48,7 +48,10 @@ public class Elevator {
      * @return doorOpen
      */
     public boolean isDoorOpen() {
-        return doorOpen;
+        return doorOpen = true;
+    }
+    public boolean isDoorClose(){
+    	return !doorOpen;
     }
 
     /**
@@ -56,7 +59,10 @@ public class Elevator {
      * @return moving
      */
     public boolean isMoving() {
-        return moving;
+        return moving = true;
+    }
+    public boolean isNotMoving() {
+        return !moving;
     }
 
     /**
@@ -65,9 +71,9 @@ public class Elevator {
     public void OpenDoor()
     {
         if (!moving)
-        {
-            doorOpen = true;
+        {doorOpen = true;
         }
+       
     }
 
     /**
@@ -75,9 +81,8 @@ public class Elevator {
      */
     public void CloseDoor()
     {
-        if (!moving)
-        {
-            doorOpen = !doorOpen;
+        if (!moving){
+            doorOpen = false;
         }
     }
 
@@ -88,14 +93,11 @@ public class Elevator {
      */
     public boolean GoUp(int desiredFloor)
     {
-        currentLevel = desiredFloor;
-
-        if (desiredFloor > currentLevel && desiredFloor <= numberOfLevels && doorOpen)
-        {
-            return true;
-        }
-        else
-        {
+    	if (desiredFloor > currentLevel && desiredFloor <= numberOfLevels && !doorOpen){
+            currentLevel = desiredFloor;
+        	return true;
+        }else{
+        
             return false;
         }
     }
@@ -109,7 +111,7 @@ public class Elevator {
     {
         if (!doorOpen && desiredFloor < currentLevel && desiredFloor > 0)
         {
-            currentLevel -= desiredFloor;
+            currentLevel = desiredFloor;
             return true;
         }
 

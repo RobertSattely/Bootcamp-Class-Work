@@ -10,8 +10,9 @@ public class HomeworkAssignment {
      * Homework assignment requires possible marks 
      * @param possibleMarks
      */
-    public HomeworkAssignment(int possibleMarks) {
+    public HomeworkAssignment(int possibleMarks,String submitterName) {
         this.possibleMarks = possibleMarks;
+        this.submitterName = submitterName;
     }
 
     /**
@@ -61,20 +62,20 @@ public class HomeworkAssignment {
      * @return
      */
     public String getLetterGrade() {
-        double percentage = (double)totalMarks / possibleMarks;
+        double percentage = ((double) totalMarks/possibleMarks)*100;
 
-        if (percentage >= 0.6) {
-            return "D";
-        }
-        if (percentage >= 0.7) {
-            return "C";
-        }
-        if (percentage >= 0.8) {
+        if (percentage >= 90) {
+            return "A";
+        } 
+        else if (percentage >= 80) {
             return "B";
         }
-        if (percentage >= 0.9) {
-            return "A";
-        }                                                
+        else if (percentage >= 70) {
+            return "C";
+        }
+        else if (percentage >= 60) {
+            return "D";
+        }
         else {
             return "F";
         }
