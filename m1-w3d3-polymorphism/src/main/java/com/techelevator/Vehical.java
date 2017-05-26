@@ -1,5 +1,7 @@
 package com.techelevator;
 
-public interface VEHICLE {
+
+public interface Vehical {
 	double calculateToll(double distance);
+	String getName();
 }

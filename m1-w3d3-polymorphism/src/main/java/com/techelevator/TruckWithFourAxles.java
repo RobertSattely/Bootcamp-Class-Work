@@ -1,16 +1,16 @@
 package com.techelevator;
 
-public class Car implements Vehical{
+public class TruckWithFourAxles implements Vehical{
 
 	@Override
 	public double calculateToll(double distance) {
-		double toll = distance * 0.02;
+		double toll = distance * 0.04;
 		return toll;
 	}
 
 	@Override
 	public String getName() {
-		return "Car";
+		return "4 Axle Truck";
 	}
 
 }

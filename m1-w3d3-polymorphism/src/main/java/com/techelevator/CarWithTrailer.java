@@ -1,16 +1,16 @@
 package com.techelevator;
 
-public class Car implements Vehical{
+public class CarWithTrailer implements Vehical {
 
 	@Override
 	public double calculateToll(double distance) {
-		double toll = distance * 0.02;
+		double toll = (distance * 0.020) + 1;
 		return toll;
 	}
 
 	@Override
 	public String getName() {
-		return "Car";
+		return "Car w/Trailer";
 	}
 
 }
