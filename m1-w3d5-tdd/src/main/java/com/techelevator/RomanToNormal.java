@@ -13,54 +13,53 @@ public class RomanToNormal {
 
 	    int roman = 0;
 	    String N = numerals ;
-         
+	    
 		 while (N.contains("CM")) {
-             roman += 900;
-//             N.replace("CM", "");
-             
+			 roman += 900;
+			 N = N.replaceFirst("CM", "");
 		 } while (N.contains("CD")) {
              roman += 400;
-//             N.replace("CD", "");
+             N = N.replaceFirst("CD", "");
             
          } while (N.contains("XC")) {
              roman += 90;
-//             N.replace("XC", "");
+            N = N.replaceFirst("XC", "");
          
          } while (N.contains("IV")) {
         	 roman += 4;
-//        	 N.replace("IV", "");	
+        	N = N.replaceFirst("IV", "");	
         	 
          } while (N.contains("XL")) {
         	 roman += 40;
-//        	 N.replace("XL", "");
+        	N = N.replaceFirst("XL", "");
         	 
          } while (N.contains("M")) {
                  roman += 1000;
-//                 N.replace("M", "");
+             N = N.replaceFirst("M", "");
             
          } while (N.contains("D")) {
                  roman += 500;
-//                 N.replace("D", "");
+             N = N.replaceFirst("D", "");
                  
          } while (N.contains("C")) {
              roman += 100;
-//             N.replace("C", "");
+             N = N.replaceFirst("C", "");
              
          } while (N.contains("L")) {
         	 roman += 50;
-//        	 N.replace("L", "");
+        	 N = N.replaceFirst("L", "");
             
          } while (N.contains("X")) {
              roman += 10;
-             N.replace("X", "");
+             N = N.replaceFirst("X", "");
                 
          } while (N.contains("V")) {
              roman += 5;
-//             N.replace("V", "");
+             N = N.replaceFirst("V", "");
  
          } while (N.contains("I")) {
              roman += 1;
-//             N.replace("I", "");
+             N = N.replaceFirst("I", "");
          }	
          
          System.out.println(roman + " Crazy huh!");	
