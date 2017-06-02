@@ -17,9 +17,6 @@ public class FizzWriter {
 				writer.println(fizzBuzz(i));
 			}
 		} catch (FileNotFoundException e) {
-			// loop through 1 to 300
-			// print the fizz buzz value to the file
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
