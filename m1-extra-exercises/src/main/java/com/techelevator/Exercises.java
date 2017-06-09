@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.lang.reflect.Array;
 import java.util.LinkedList;
 
 public class Exercises {
@@ -11,7 +12,22 @@ public class Exercises {
     arrayDeduplication([1, 1, 1]) → [1]
     */
     public int[] arrayDeduplication(int[] nums) {
-        return null;
+      int[] numbers = new int[]{};
+    	
+    	if(nums.length == 0 ){
+    		return numbers;
+    	}else {
+    		int number = 0;
+    		for (int i = 0; i<nums.length; i++){
+    			if(nums[i]== number){
+    		
+    			}else {
+    				numbers[i] = nums[i];
+    				number = nums[i];
+    			}
+    		}
+    		return numbers;
+    	}
     }
     
     /*

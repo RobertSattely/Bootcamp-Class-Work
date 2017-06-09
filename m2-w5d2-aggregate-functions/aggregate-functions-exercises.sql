@@ -169,4 +169,4 @@ SELECT AVG(lifeexpectancy) AS avg, MIN(lifeexpectancy) AS min, MAX(lifeexpectanc
 FROM country
 WHERE lifeexpectancy IS NOT NULL
 GROUP BY continent
-ORDER BY avg;
+ORDER BY lifeexpectancy;
